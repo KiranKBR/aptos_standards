@@ -1,0 +1,26 @@
+[package]
+name = "stablecoin"
+version = "0.0.0"
+
+
+[addresses]
+stablecoin = "0xcafe"
+master_minter = "0xbab"
+minter = "0xface"
+pauser = "0xdafe"
+denylister = "0xcade"
+
+[dev-addresses]
+stablecoin = "0xcafe"
+master_minter = "0xbab"
+minter = "0xface"
+pauser = "0xdafe"
+denylister = "0xcade"
+
+[dependencies]
+# AptosFramework = { local = "../../../framework/aptos-framework" }
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "testnet"
+subdir = "aptos-move/framework/aptos-framework"

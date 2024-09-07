@@ -1,0 +1,21 @@
+[package]
+name = "ManagedFungibleAsset"
+version = "0.0.0"
+
+[addresses]
+aptos_framework = "0x1"
+aptos_token_objects = "0x4"
+example_addr = "0x42"
+
+[dependencies]
+# AptosFramework = { local = "../../../framework/aptos-framework" }
+# AptosTokenObjects = { local = "../../../framework/aptos-token-objects" }
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/aptos-core.git"
+subdir = "aptos-move/framework/aptos-token-objects/"
+rev = "mainnet"
