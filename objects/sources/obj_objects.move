@@ -21,7 +21,7 @@ module my_addr::object_playground {
     }
 
     #[resource_group_member(group = aptos_framework::object::ObjectGroup)]
-    struct ObjectController has key,copy {
+    struct ObjectController has key {
         extend_ref: object::ExtendRef
     }
 
