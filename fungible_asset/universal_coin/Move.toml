@@ -4,12 +4,17 @@ version = "1.0.0"
 authors = []
 
 [addresses]
-aptos_asset = "0x42"
+aptos_asset = "0x4c5179e8d2e4275478f731df0d56a2cb6368622e335b252c98a995d777ad6079"
+std = "0x1"
+aptos_std = "0x1"
+aptos_framework = "0x1"
+aptos_token = "0x3"
+aptos_token_objects = "0x4"
 [dev-addresses]
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "mainnet"
+rev = "tesetnet"
 subdir = "aptos-move/framework/aptos-framework"
 
 [dev-dependencies]

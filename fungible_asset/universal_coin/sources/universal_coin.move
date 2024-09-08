@@ -70,6 +70,7 @@ module aptos_asset::fungible_asset {
         fungible_asset::deposit_with_ref(
             &managed_fungible_asset.transfer_ref, to_wallet, fa
         );
+        //we can use directly mint_to function instead
     } // <:!:mint
 
     /// Transfer as the owner of metadata object ignoring `frozen` field.s
@@ -135,5 +136,7 @@ module aptos_asset::fungible_asset {
             error::permission_denied(ENOT_OWNER)
         );
         borrow_global<ManagedFungibleAsset>(object::object_address(&asset))
+
+        // let asset_address = object::create_object_address(&@aptos_asset, ASSET_SYMBOL);
     }
 }
