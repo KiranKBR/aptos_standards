@@ -230,13 +230,14 @@ module hero::hero {
             &collection,
             &name,
         );
-        move_from<Hero>(token_address)
+        move_from<Hero>(token_address)//@audit we should not use move_from in view function
     }
 
     #[view]
     fun view_hero_by_object(hero_obj: Object<Hero>): Hero acquires Hero {
         let token_address = object::object_address(&hero_obj);
         move_from<Hero>(token_address)
+        //  *borrow_global<Hero>(token_address)
     }
 
     #[view]
@@ -303,8 +304,10 @@ module hero::hero {
         assert!(object::is_owner(hero, account_address), 0);
         assert!(object::is_owner(weapon, account_address), 1);
         assert!(object::is_owner(gem, account_address), 2);
-
-        hero_equip_weapon(account, hero, weapon);
+        let _hero=view_hero(account_address,string::utf8(b"Hero Quest!"), string::utf8(b"Wukong"));
+        // drop(_ob);
+        assert!(object::is_owner(_hero, account_address), 15); 
+    hero_equip_weapon(account, hero, weapon);
         assert!(object::is_owner(hero, account_address), 3);
         assert!(object::is_owner(weapon, object::object_address(&hero)), 4);
         assert!(object::is_owner(gem, account_address), 5);
