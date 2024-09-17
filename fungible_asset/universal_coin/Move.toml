@@ -4,7 +4,7 @@ version = "1.0.0"
 authors = []
 
 [addresses]
-aptos_asset = "0x4c5179e8d2e4275478f731df0d56a2cb6368622e335b252c98a995d777ad6079"
+aptos_asset = "0x3d55327b1d277c8aad9500cbc937ec453c593772d3efb0dc7b388139fed96461"
 std = "0x1"
 aptos_std = "0x1"
 aptos_framework = "0x1"
